@@ -1,0 +1,155 @@
+/* ==========================================================================
+   CivicAI — VoiceInput Component Stylesheet
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+.voice-input {
+  background-color: var(--color-surface);
+  border: 1.5px dashed var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  width: 100%;
+}
+
+.voice-input--recording {
+  border-style: solid;
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.voice-input--completed {
+  border-style: solid;
+  border-color: var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.voice-input--error {
+  border-style: solid;
+  border-color: rgba(220, 38, 38, 0.3);
+  background-color: var(--color-error-bg);
+}
+
+.voice-input__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+}
+
+/* Mic Action Button */
+.voice-input__mic-btn-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-input__mic-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.voice-input__mic-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.voice-input__mic-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.voice-input__mic-btn--recording {
+  background-color: var(--color-error);
+  animation: voice-pulse 1.5s infinite;
+}
+.voice-input__mic-btn--recording:hover {
+  background-color: #b91c1c;
+}
+
+@keyframes voice-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Typography & Titles */
+.voice-input__title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-heading);
+}
+
+.voice-input__subtitle {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  max-width: 440px;
+  line-height: var(--line-height-body);
+}
+
+.voice-input__language-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* Timer Display */
+.voice-input__timer {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-error);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Audio Preview Player */
+.voice-input__audio-preview {
+  width: 100%;
+  max-width: 400px;
+  margin-top: var(--space-2);
+}
+
+.voice-input__audio-element {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-md);
+}
+
+/* Action Controls Row */
+.voice-input__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}

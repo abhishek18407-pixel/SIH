@@ -1,0 +1,60 @@
+/* ==========================================================================
+   CivicAI — InputModeSelector Component Stylesheet
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+.input-mode-selector {
+  display: flex;
+  background-color: var(--color-surface-muted);
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+  width: 100%;
+  gap: 4px;
+}
+
+.input-mode-selector__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-height: 48px;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              border-color var(--transition-fast);
+  user-select: none;
+}
+
+.input-mode-selector__btn:hover:not(.input-mode-selector__btn--active) {
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.input-mode-selector__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Active Segmented Mode Button */
+.input-mode-selector__btn--active {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  border-color: var(--color-primary-100);
+  box-shadow: var(--shadow-sm);
+}
+
+.input-mode-selector__icon {
+  flex-shrink: 0;
+}

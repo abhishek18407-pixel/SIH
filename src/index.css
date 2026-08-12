@@ -1,0 +1,10 @@
+@import './styles/global.css';
+@import './styles/layout.css';
+@import './styles/components.css';
+
+/* Application root wrapper default */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

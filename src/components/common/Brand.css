@@ -1,0 +1,144 @@
+/* ==========================================================================
+   CivicAI — Brand Component Stylesheet
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-sans);
+}
+
+.brand__header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Icon Container Badge */
+.brand__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.brand__sparkle-badge {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+/* Size Scale Variants */
+.brand--sm .brand__icon-wrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+}
+.brand--sm .brand__main-icon {
+  width: 16px;
+  height: 16px;
+}
+.brand--sm .brand__sparkle-icon {
+  width: 8px;
+  height: 8px;
+}
+.brand--sm .brand__title {
+  font-size: var(--font-h3);
+}
+
+.brand--md .brand__icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+}
+.brand--md .brand__main-icon {
+  width: 20px;
+  height: 20px;
+}
+.brand--md .brand__sparkle-icon {
+  width: 10px;
+  height: 10px;
+}
+.brand--md .brand__title {
+  font-size: var(--font-h2);
+}
+
+.brand--lg .brand__icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+}
+.brand--lg .brand__main-icon {
+  width: 28px;
+  height: 28px;
+}
+.brand--lg .brand__sparkle-icon {
+  width: 14px;
+  height: 14px;
+}
+.brand--lg .brand__title {
+  font-size: var(--font-h1);
+}
+
+/* Title & Text Typography */
+.brand__title {
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.brand__name-civic {
+  color: var(--color-primary);
+}
+
+.brand__name-ai {
+  color: var(--color-teal);
+  margin-left: 1px;
+}
+
+.brand__badge {
+  font-size: var(--font-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: var(--space-2);
+}
+
+/* Tagline Typography */
+.brand__tagline {
+  font-size: var(--font-small);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+}
+
+.brand--sm .brand__tagline {
+  font-size: var(--font-caption);
+}
+
+.brand--lg .brand__tagline {
+  font-size: var(--font-body);
+}

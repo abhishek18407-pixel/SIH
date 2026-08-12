@@ -1,0 +1,173 @@
+/* ==========================================================================
+   CivicAI — Navbar Component Stylesheet
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+.navbar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-default);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__brand-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__brand-link:hover {
+  opacity: 0.9;
+}
+
+.navbar__brand-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Desktop Navigation List */
+.navbar__menu {
+  display: none; /* Mobile first hidden */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+  }
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  min-height: 40px;
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.navbar__link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Active Navigation Link State */
+.navbar__link--active {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.navbar__link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+/* Mobile Toggle Button */
+.navbar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.navbar__toggle:hover {
+  background-color: var(--color-bg-app);
+  border-color: var(--color-border-strong);
+}
+
+.navbar__toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+/* Mobile Drawer Dropdown */
+.navbar__mobile-menu {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border-default);
+  background-color: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .navbar__mobile-menu {
+    display: none;
+  }
+}
+
+.navbar__mobile-item {
+  margin-bottom: var(--space-1);
+}
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  min-height: 48px;
+}
+
+.navbar__mobile-link:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.navbar__mobile-link--active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  border-left: 4px solid var(--color-primary);
+}

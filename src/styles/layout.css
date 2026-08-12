@@ -1,0 +1,158 @@
+/* ==========================================================================
+   CivicAI — Responsive Layout System & Grid Utilities
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CONTAINER SYSTEM (.container)
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--layout-page-padding-mobile);
+  padding-right: var(--layout-page-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--layout-page-padding-desktop);
+    padding-right: var(--layout-page-padding-desktop);
+  }
+}
+
+/* Container Max-Width Variants */
+.container--sm   { max-width: var(--breakpoint-sm); }
+.container--md   { max-width: var(--breakpoint-md); }
+.container--lg   { max-width: var(--breakpoint-lg); }
+.container--xl   { max-width: var(--layout-max-width); }
+.container--full { max-width: 100%; }
+
+/* --------------------------------------------------------------------------
+   2. PAGE LAYOUT STRUCTURE (.page-layout)
+   -------------------------------------------------------------------------- */
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg-app);
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.page-layout__header {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.page-layout__main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .page-layout__main {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-12);
+  }
+}
+
+.page-layout__footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. FLEX LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+.flex            { display: flex; }
+.flex-col        { display: flex; flex-direction: column; }
+.flex-wrap       { flex-wrap: wrap; }
+
+.items-start     { align-items: flex-start; }
+.items-center    { align-items: center; }
+.items-end       { align-items: flex-end; }
+
+.justify-start   { justify-content: flex-start; }
+.justify-center  { justify-content: center; }
+.justify-end     { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE GRID & STACK SYSTEM
+   -------------------------------------------------------------------------- */
+/* Vertical Stack Helper */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.stack-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Responsive Grid Base */
+.grid {
+  display: grid;
+  gap: var(--layout-gap);
+  width: 100%;
+}
+
+/* 1 Column */
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+}
+
+/* 2 Column Responsive Grid (1 col mobile, 2 col tablet/desktop) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+}
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3 Column Responsive Grid (1 col mobile, 2 col tablet, 3 col desktop) */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+}
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Auto-fitting Responsive Grid */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--layout-gap);
+}
+
+/* --------------------------------------------------------------------------
+   5. MEDIA & ELEMENT RESPONSIVE RULES
+   -------------------------------------------------------------------------- */
+img, video {
+  max-width: 100%;
+  height: auto;
+}

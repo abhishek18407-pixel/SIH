@@ -1,0 +1,140 @@
+/* ==========================================================================
+   CivicAI — ComplaintReview Component Stylesheet
+   SIH Problem Statement: SIH260011
+   ========================================================================== */
+
+.complaint-review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.complaint-review__header {
+  text-align: left;
+}
+
+.complaint-review__title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--space-1);
+}
+
+.complaint-review__subtitle {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Metadata Grid Rows */
+.complaint-review__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-surface-muted);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+}
+
+@media (min-width: 640px) {
+  .complaint-review__meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.complaint-review__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.complaint-review__meta-label {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.complaint-review__meta-value {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Content Box Preview */
+.complaint-review__content-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.complaint-review__content-label {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.complaint-review__text-content {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.complaint-review__voice-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.complaint-review__audio-element {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* Future AI Processing Banner */
+.complaint-review__ai-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background-color: var(--color-info-bg);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  color: var(--color-primary-900);
+}
+
+.complaint-review__ai-icon {
+  color: var(--color-info);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.complaint-review__ai-text {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+}
+
+/* Action Controls Footer */
+.complaint-review__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
